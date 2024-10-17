@@ -25,7 +25,8 @@
                           <td>{{$no++}}</td>
                           <td>{{$item->title}}</td>
                           <td><img src="{{asset($item->file)}}" width="200" alt="images"></td>
-                          <td><a href="" class="btn btn-warning">edit</a>
+                          <td>
+                            <a href="{{route('backend.blog.edit',$item->id)}}" class="btn btn-warning">edit</a>
                             <form action="{{route('backend.blog.aksi_hapus',$item->id)}}" method="post">
                                 @csrf
                                 <button class="btn btn-danger">Hapus</button>

@@ -23,7 +23,7 @@
                                                 class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">2 days
                                                 ago</span></div>
                                     </div>
-                                    <div class="read fw-700 text-underline">Read More</div>
+                                    <a href="{{route('blog_detail',$item->slug)}}" class="read fw-700 text-underline">Read More</a>
                                 </div>
                             </a>
                         @endforeach
