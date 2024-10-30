@@ -39,7 +39,10 @@
             <div class="menu-center-block h-100">
               <ul class="menu-nav flex-item-center h-100">
                 <li class="nav-item h-100 flex-center home">
-                  <a class="nav-link" href="{{route('home')}}">Home </a>
+                  <a class="nav-link" href="{{route('home')}}">Homee </a>
+                </li>
+                <li class="nav-item h-100 flex-center home">
+                  <a class="nav-link" href="{{route('product')}}">Produk </a>
                 </li>
                 <li class="nav-item h-100 flex-center home">
                   <a class="nav-link" href="{{route('blog')}}">Blog </a>

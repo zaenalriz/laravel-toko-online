@@ -59,21 +59,23 @@ class BlogController extends Controller
   }
   public function edit($id)
   {
-    $blog = Blogs::where('id', $id)->first();
+
+    $artikel = Blogs::where('id', $id)->first();
     $nama = 'adit';
     $sekolah = 'smk ds';
+    $daerah='bogor';
     return view(
       'backend.blog.edit',
-      compact('blog', 'nama', 'sekolah')
+      compact('artikel', 'nama', 'sekolah','daerah')
     );
   }
   public function aksi_edit(Request $request,$id){
-    
     $request->validate([
       'title' => 'required|string',
       'description' => 'required|string',
       'file' => 'file|mimes:jpg,png|max:2048'
     ]);
+
 $data=[
   'title'=>$request->title,
   'description'=>$request->description,
@@ -85,7 +87,7 @@ if($request->hasFile('file')){
   //1729139021-blog.png
   $filename=time().'-blog'.'.'.$file->getClientOriginalExtension();
   $file->move(public_path('blogs'),$filename);
-// fungsi untuk menambahkan key ke $data
+  // fungsi untuk menambahkan key ke $data
   $data['file']='blogs/'.$filename;
   // hapus gambar
   $ambilDataBlog = Blogs::where('id', $id)->first();
