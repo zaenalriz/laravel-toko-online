@@ -11,7 +11,7 @@
       href="https://fonts.gstatic.com"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{{asset('boostrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/boostrap.min.css')}}">
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
       rel="stylesheet"
