@@ -62,35 +62,23 @@
         </div>
         <div class="payment-gateway-one mt-100 bg-surface">
             <div class="bg-img">
-                <img class="w-100 h-100" src="assets/images/component/960x680.png" alt="" />
+                <img class="w-100 h-100" src="{{asset($config->file_about)}}" alt="" />
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-xl-6">
                         <div class="payment-infor flex-columns-between">
-                            <div class="heading flex-item-center gap-16">
-                                <div class="bg-img">
-                                    <img class="w-100" src="assets/images/component/avatar-gateway1.png" alt="" />
-                                </div>
-                                <div class="text-button text-secondary">
-                                    Trusted by 50M+ People <br />around the globe
-                                </div>
-                            </div>
+                            
                             <div class="text">
-                                <div class="heading3">Payment Gateway Services</div>
+                                <div class="heading3">{{$config->title_about}}</div>
                                 <div class="body3 text-secondary mt-24">
-                                    We provide reliable and secure payment gateway services for
-                                    businesses of all sizes. With our cutting-edge technology
-                                    and 24/7 customer support, you can easily accept payments
-                                    from customers all over the world.
+                                   {{$config->description_about}}
                                 </div>
                             </div>
                             <div class="button-block flex-item-center gap-24">
-                                <a class="button-share box-shadow hover-button-black text-white bg-blue text-button pt-12 pb-12 pl-36 pr-36 bora-48"
-                                    href="contact-two.html">Get started</a><a
+                               <a
                                     class="button-share box-shadow hover-button-black text-on-surface bg-white text-button pt-12 pb-12 pl-36 pr-36 bora-48 flex-item-center gap-8"
-                                    href="contact-two.html"><i class="ph ph-phone fs-20"></i><span>(00) 123 456
-                                        789</span></a><img src="assets/images/component/gateway1-dot.png" alt="" />
+                                    href="https://api.whatsapp.com/send?phone={{$config->phone}}" target="_blank"><i class="ph ph-phone fs-20"></i><span>{{$config->phone}}</span></a><img src="assets/images/component/gateway1-dot.png" alt="" />
                             </div>
                         </div>
                     </div>
@@ -99,19 +87,16 @@
         </div>
         <div class="blog-list style-one mt-100 mb-5">
             <div class="container">
-                <div class="heading3 text-center">Latest News</div>
+                <div class="heading3 text-center">Blog Terbaru</div>
                 <div class="row row-gap-32 mt-40">
                     @foreach ($blogs as $item)
                         <div class="blog-item col-12 col-xl-4 col-sm-6" data-name="">
-                            <a class="blog-item-main" href="blog-detail-two.html">
+                            <a class="blog-item-main" href="{{route('blog_detail',$item->slug)}}">
                                 <div class="bg-img w-100 overflow-hidden mb-minus-1">
                                     <img class="w-100 h-100 display-block" src="{{ $item->file }}"
                                         alt="CI Financial sells RIA stake in new expansion strategy" />
                                 </div>
                                 <div class="infor bg-white p-24">
-                                    <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
-                                        Makerting
-                                    </div>
                                     <div class="heading6 mt-8">
                                         {{ $item->title }}
                                     </div>

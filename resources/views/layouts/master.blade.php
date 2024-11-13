@@ -1,10 +1,15 @@
+@php
+    use App\Models\Configuration;
+    $config=Configuration::first();
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Homepage 1 - Payment Solution</title>
+    <title>{{$config->title_web}}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
@@ -16,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" type="image/png" href="assets/images/fav.png" />
+    <link rel="shortcut icon" type="image/png" href="{{asset($config->logo)}}" />
     <!--build:css assets/css/styles.min.css-->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/slick.min.css')}}" />
@@ -33,7 +38,8 @@
             <a class="menu-left-block" href=""
               ><img
                 class="menu-logo display-block"
-                src="assets/images/Logo.svg"
+                src="{{asset($config->logo)}}"
+                width="100"
                 alt="logo"
             /></a>
             <div class="menu-center-block h-100">
@@ -49,16 +55,19 @@
                 </li>
               </ul>
             </div>
+            <a href="https://api.whatsapp.com/send?phone={{$config->phone}}" target="_blank">
             <div class="menu-right-block flex-item-center">
               <div class="icon-call"><i class="icon-phone-call fs-36"></i></div>
               <div class="text ml-12">
-                <div class="text caption1">Free Consultancy</div>
-                <div class="number text-button">+123 456 7890</div>
+                <div class="text caption1">Hubungi Kami</div>
+                <div class="number text-button">{{$config->phone}}</div>
               </div>
               <div class="menu-humburger display-none pointer">
                 <i class="ph-bold ph-list display-block"></i>
               </div>
             </div>
+          </a>
+
           </div>
           <div id="menu-mobile-block">
             <div class="menu-mobile-main">

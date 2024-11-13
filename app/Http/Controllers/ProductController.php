@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Configuration;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class ProductController extends Controller
             $product=Product::where('category_id',$categoryId)->get();
         }
         $category=Category::get();
-
-         return view('product',compact('category','product'));
+$config=Configuration::first();
+         return view('product',compact('category','product','config'));
     }
 }

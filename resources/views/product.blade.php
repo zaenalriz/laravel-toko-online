@@ -2,15 +2,15 @@
 
 @section('content')
     <div class="slider-sub ">
-        <div class="bg-img"> <img src="{{ asset('banner/banner.jpg') }}" alt="banner"></div>
+        <div class="bg-img"> <img src="{{ asset($config->file_product) }}" alt="banner"></div>
         <div class="container">
-            <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white" href="index.html">Home</a><i
+            <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white" href="{{route('home')}}">Home</a><i
                     class="ph ph-caret-double-right text-white"></i>
                 <div class="caption1 text-white">Produk Kami</div>
             </div>
             <div class="text-nav">
-                <div class="heading3 text-white">Produk Kami</div>
-                <div class="sub-heading mt-8 text-white fw-400">Banyak bermacam produk yang menarik disini!</div>
+                <div class="heading3 text-white">{{$config->title_product}}</div>
+                <div class="sub-heading mt-8 text-white fw-400">{{$config->description_product}}</div>
             </div>
         </div>
     </div>
