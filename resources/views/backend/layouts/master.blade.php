@@ -66,7 +66,11 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Blog</span></a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('configuration')}}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Konfigurasi</span></a>
+            </li>
 
         </ul>
         <!-- End of Sidebar -->

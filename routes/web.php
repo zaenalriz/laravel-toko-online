@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Backend\BlogController as BackendBlogController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -62,7 +63,13 @@ Route::middleware(['AuthWeb'])->group(function () {
     Route::post('backend/slider/aksi_edit/{id}', [SliderController::class, 'aksi_edit'])
     ->name('backend.slider.aksi_edit');
     Route::get('backend/service', [ServiceController::class, 'index'])->name('backend.service');
+
+Route::get('backend/configuration',[ConfigurationController::class,'index'])
+->name('configuration');
+Route::post('backend/configuration/aksi_edit',[ConfigurationController::class,'aksi_edit'])
+->name('configuration.aksi_edit');
 });
+
 Route::get('welcome', function () {
     return view('welcome');
 });
