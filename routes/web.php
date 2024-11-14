@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Backend\BlogController as BackendBlogController;
+use App\Http\Controllers\Backend\ProductController as BackendProductController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\ConfigurationController;
@@ -68,6 +69,11 @@ Route::get('backend/configuration',[ConfigurationController::class,'index'])
 ->name('configuration');
 Route::post('backend/configuration/aksi_edit',[ConfigurationController::class,'aksi_edit'])
 ->name('configuration.aksi_edit');
+
+// product
+Route::get('backend/product',[BackendProductController::class,'index'])
+->name('backend.product');
+
 });
 
 Route::get('welcome', function () {
