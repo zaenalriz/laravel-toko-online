@@ -88,6 +88,15 @@ Route::post('/backend/product/aksi_edit/{id}',
 [BackendProductController::class,'aksi_edit'])
 ->name('backend.product.aksi_edit')
 ;
+Route::post('/backend/product/aksi_hapus/{id}',
+[BackendProductController::class,'aksi_hapus'])
+->name('backend.product.aksi_hapus')
+;
+
+Route::get('backend/product/restoreProduct',
+[BackendProductController::class,'restoreProduct'])
+->name('backend.product.restoreProduct');
+
 
 Route::get('welcome', function () {
     return view('welcome');

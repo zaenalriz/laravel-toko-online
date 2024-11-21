@@ -73,4 +73,13 @@ public function aksi_edit(Request $request,$id){
               Product::where('id',$id)->update($data);
               return redirect()->route('backend.product');
 }
+public function aksi_hapus($id){
+Product::where('id',$id)->delete();
+return redirect()->route('backend.product');
+}
+
+public function restoreProduct(){
+    Product::onlyTrashed()->restore();
+    return redirect()->back();
+}
 }
