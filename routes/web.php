@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Backend\BlogController as BackendBlogController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController as BackendProductController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\SliderController;
@@ -96,6 +97,17 @@ Route::post('/backend/product/aksi_hapus/{id}',
 Route::get('backend/product/restoreProduct',
 [BackendProductController::class,'restoreProduct'])
 ->name('backend.product.restoreProduct');
+
+Route::get('backend/category',[CategoryController::class,'index'])
+->name('backend.category');
+
+Route::get('backend/category/tambah',
+[CategoryController::class,'tambah'])
+->name('backend.category.tambah');
+
+Route::post('backend/category/aksi_tambah',
+[CategoryController::class,'aksi_tambah'])
+->name('backend.category.aksi_tambah');
 
 
 Route::get('welcome', function () {
