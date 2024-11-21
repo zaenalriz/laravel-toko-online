@@ -73,8 +73,21 @@ Route::post('backend/configuration/aksi_edit',[ConfigurationController::class,'a
 // product
 Route::get('backend/product',[BackendProductController::class,'index'])
 ->name('backend.product');
+Route::get('backend/product/tambah',[BackendProductController::class,'tambah'])
+->name('backend.product.tambah');
+Route::post('/backend/product/aksi_tambah',
+[BackendProductController::class,'aksi_tambah'])->name('backend.product.aksi_tambah')
+;
 
+Route::get('backend/product/edit/{id}',
+[BackendProductController::class,'edit'])
+->name('backend.product.edit');
 });
+
+Route::post('/backend/product/aksi_edit/{id}',
+[BackendProductController::class,'aksi_edit'])
+->name('backend.product.aksi_edit')
+;
 
 Route::get('welcome', function () {
     return view('welcome');

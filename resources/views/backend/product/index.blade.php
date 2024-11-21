@@ -5,7 +5,7 @@
         <h6 class="m-0 font-weight-bold text-primary">produk</h6>
     </div>
     <div class="card-body">
-        <a href="" class="btn btn-primary mb-2">Tambah produk</a>
+        <a href="{{route('backend.product.tambah')}}" class="btn btn-primary mb-2">Tambah produk</a>
         <div class="table-responsive">
             <table class="table" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -31,6 +31,10 @@
         <td>{{$item->price}}</td>
         <td>{{$item->discount}}</td>
         <td><img src="{{asset($item->file)}}" width="100" alt=""></td>
+        <td>
+            <a href="{{route('backend.product.edit',$item->id)}}" class="btn btn-warning">Edit</a>
+        </td>
+
     </tr>
 @endforeach
                 </tbody>

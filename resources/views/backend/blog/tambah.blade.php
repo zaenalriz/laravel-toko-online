@@ -15,6 +15,7 @@
                     <input type="text" name="title" class="form-control form-control-user" aria-describedby="emailHelp"
                         placeholder="Masukan judul">
                 </div>
+               
                 <div class="form-group">
                     <textarea name="description" class="form-control editor" placeholder="masukan deskripsi" cols="30" rows="3"></textarea>
                 </div>
